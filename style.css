@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: darkblue;
+}
+
+.pic {
+  display: flex;
+  align-items: center;
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: stretch;
+}
+
+.skills {
+  display: flex;
+  justify-content: space-between;
+}
