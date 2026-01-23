@@ -1,3 +1,7 @@
+* {
+  font-family: "Google Sans Code", monospace;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -34,6 +38,8 @@ footer {
 .skills {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  align-items: stretch;
 }
 
 .contact {

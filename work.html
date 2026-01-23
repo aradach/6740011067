@@ -7,28 +7,35 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        * { font-family: "Google Sans Code", monospace; }
-    </style>
+    <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 <body>
-    <div class="px-6 pt-7 pb-2 bg-[#025c92] col-span-12 lg:col-span-12 md:col-span-12">
-        <header>
-        <img class="object-cover relative rounded-full w-[70px] h-[70px]" src="https://img.icons8.com/ios_filled/512/FFFFFF/bts-logo.png">
+    <div class="px-6 pt-7 pb-2 bg-[#025c92] relative" x-data="{ open: false }">
+        <header class="flex items-center justify-between">
+            <img class="object-cover rounded-full w-[70px] h-[70px]" src="https://img.icons8.com/ios_filled/512/FFFFFF/bts-logo.png">
 
-        <ul class="text-xl font-bold flex space-x-8 text-white">
-            <li><a href="index.html" class="hover:border-b-2 border-[#bad3ed] hover:text-[#bad3ed]">Home</a></li>
-            <li><a href="about.html" class="hover:border-b-2 border-[#bad3ed] hover:text-[#bad3ed]">About</a></li>
-            <li><a href="skills.html" class="hover:border-b-2 border-[#bad3ed] hover:text-[#bad3ed]">Skills</a></li>
-            <li><a href="work.html" class="hover:border-b-2 border-[#bad3ed] hover:text-[#bad3ed]">Work</a></li>
-            <li><a href="https://sites.google.com/psu.ac.th/067/home" target="_blank" class="hover:border-b-2 border-[#bad3ed] hover:text-[#bad3ed]">Exercise</a></li>
-            <li><a href="contact.html" class="hover:border-b-2 border-[#bad3ed] hover:text-[#bad3ed]">Contact</a></li>
-        </ul>
+            <button @click="open = !open" class="text-white outline-none focus:outline-none p-2 md:hidden">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+
+            <ul :class="{'flex': open, 'hidden': !open}" 
+                class="absolute right-6 top-20 z-50 w-48 bg-white rounded-lg shadow-xl py-2 flex-col md:static md:w-auto md:bg-transparent md:shadow-none md:flex md:flex-row md:space-x-8 md:p-0 md:top-0 md:right-0 text-xl font-bold">
+                
+                <li><a href="index.html" class="block px-4 py-3 text-gray-800 md:text-white md:hover:border-b-2 border-[#bad3ed] hover:bg-[#bad3ed] md:hover:bg-transparent transition">Home</a></li>
+                <li class="hidden md:block"></li> <li><a href="about.html" class="block px-4 py-3 text-gray-800 md:text-white md:hover:border-b-2 border-[#bad3ed] hover:bg-[#bad3ed] md:hover:bg-transparent transition">About</a></li>
+                <li><a href="skills.html" class="block px-4 py-3 text-gray-800 md:text-white md:hover:border-b-2 border-[#bad3ed] hover:bg-[#bad3ed] md:hover:bg-transparent transition">Skills</a></li>
+                <li><a href="work.html" class="block px-4 py-3 text-gray-800 md:text-white md:hover:border-b-2 border-[#bad3ed] hover:bg-[#bad3ed] md:hover:bg-transparent transition">Work</a></li>
+                <li><a href="https://sites.google.com/psu.ac.th/067/home" target="_blank" class="block px-4 py-3 text-gray-800 md:text-white md:hover:border-b-2 border-[#bad3ed] hover:bg-[#bad3ed] md:hover:bg-transparent transition">Exercise</a></li>
+                <li><a href="contact.html" class="block px-4 py-3 text-gray-800 md:text-white md:hover:border-b-2 border-[#bad3ed] hover:bg-[#bad3ed] md:hover:bg-transparent transition">Contact</a></li>
+            </ul>
         </header>
     </div>
 
     <div class="bg-[#e2f0ff]">
-        <div class="px-20 pt-10">
+        <div class="w-full px-20 pt-10">
             <h1 class="text-4xl font-bold text-center underline decoration-blue-500 underline-offset-8 pb-16">Work</h1>
         </div>
 
@@ -47,8 +54,10 @@
         </div>
     </div>
 
-    <footer class="flex justify-end items-center py-4 pe-8 bg-[#173b62] col-span-12 lg:col-span-12 md:col-span-12">
-        <h1 class="text-white pe-8">@ Bangtan Sonyeondan (BTS)</h1>
+    <footer class="flex justify-end items-center py-4 px-8 bg-[#173b62]">
+        <div>
+            <h1 class="text-white px-8">@ Bangtan Sonyeondan (BTS)</h1>
+        </div>
 
         <div class="flex space-x-6">
             <a href="https://www.facebook.com/bangtan.official" target="_blank" class="w-8 h-8">
@@ -64,6 +73,6 @@
                 <img src="https://img.icons8.com/ios_filled/512/FFFFFF/tiktok.png">
             </a>
         </div>
-    </footer>
+  </footer>
 </body>
 </html>
